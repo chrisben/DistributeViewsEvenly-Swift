@@ -34,7 +34,7 @@ override func viewDidLoad() {
 
     let buttonWidth = 50
 
-    let distrib = DistributeViewsEvenly(parent: self.view, viewSize: buttonWidth, horizonal: true, margin: 0)
+    let distrib = DistributeViewsEvenly(parent: self.view, viewSize: buttonWidth, horizontal: true, margin: 0)
 
     let button1 = MyButton(width: buttonWidth)
     distrib.addView(button1)
