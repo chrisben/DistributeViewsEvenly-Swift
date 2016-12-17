@@ -1,7 +1,7 @@
 DistributeViewsEvenly-Swift
 ===========================
 
-Swift helper class to distribute views evenly on the horizontal or vertical axis using autolayout constraints. The views you want to set need to share the same width (horizontal) or height (vertical).
+Swift3 helper class to distribute views evenly on the horizontal or vertical axis using autolayout constraints. The views you want to set need to share the same width (horizontal) or height (vertical).
 
 This is not a trivial thing to achieve with UIKit, as there needs to be extra invisible "spacer views" to be added between your views, as recommended in [this Apple doc](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/AutoLayoutbyExample/AutoLayoutbyExample.html#//apple_ref/doc/uid/TP40010853-CH5-SW8).
 
