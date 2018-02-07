@@ -1,7 +1,7 @@
 DistributeViewsEvenly-Swift
 ===========================
 
-Swift3 helper class to distribute views evenly on the horizontal or vertical axis using autolayout constraints. The views you want to set need to share the same width (horizontal) or height (vertical).
+Swift4 helper class to distribute views evenly on the horizontal or vertical axis using autolayout constraints. The views you want to set need to share the same width (horizontal) or height (vertical).
 
 This is not a trivial thing to achieve with UIKit, as there needs to be extra invisible "spacer views" to be added between your views, as recommended in [this Apple doc](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/AutoLayoutbyExample/AutoLayoutbyExample.html#//apple_ref/doc/uid/TP40010853-CH5-SW8).
 
@@ -33,18 +33,26 @@ override func viewDidLoad() {
     super.viewDidLoad()
 
     let buttonWidth = 50
+    let buttonHeight = 100
 
+    // Create 3 buttons and add them to the view
+    let button1 = MyButton(height: buttonHeight)
+    self.view.addSubview(button1)
+
+    let button2 = MyButton(height: buttonHeight)
+    self.view.addSubview(button2)
+
+    let button3 = MyButton(height: buttonHeight)
+    self.view.addSubview(button3)
+
+    /* Now distribute those buttons evenly across the width: | []-[]-[] | */
     let distrib = DistributeViewsEvenly(parent: self.view, viewSize: buttonWidth, horizontal: true, margin: 0)
 
-    let button1 = MyButton(width: buttonWidth)
-    distrib.addView(button1)
+    // add all views at once
+    distrib.addViews([button1, button2, button3])
+    // or add them one by one using distrib.addView(button1)
 
-    let button2 = MyButton(width: buttonWidth)
-    distrib.addView(button2)
-
-    let button3 = MyButton(width: buttonWidth)
-    distrib.addView(button3)
-
+    // assign layout constraints at the end
     distrib.setConstraints()
 }
 ```
